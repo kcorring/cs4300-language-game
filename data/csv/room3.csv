@@ -1,9 +1,9 @@
-UUID,Word,Color,Spanish
-279c1011-6808-4607-bbc6-32f3ec850154,bed,light_purple,cama
-20d25145-4359-455a-9710-7b5625718dcc,lamp,green,"lampara,lámpara"
-e666b0e8-523e-4424-badb-c539168d8fa3,rug,red,alfombra
-d2d959c5-49b7-420f-8404-abdbf6c9e376,nightstand,light_grey,mesa de noche
-0257e29e-1412-438a-9a0a-bb5184dced66,bookshelf,yellow,estante
-b94d8c56-c7d9-4d63-bd58-b78e9664b86e,desk,light_blue,escritorio
-0955601c-b001-4fbe-80ab-afa7e62d0250,computer,blue,computadora
-7d353206-3bc6-4739-92b5-54b9268d14d5,painting,white,pintura
+UUID,Word,Color,Spanish,Italian,French
+279c1011-6808-4607-bbc6-32f3ec850154,bed,light_purple,cama,letto,lit
+20d25145-4359-455a-9710-7b5625718dcc,lamp,green,"lampara,lámpara",lampada,lampe
+e666b0e8-523e-4424-badb-c539168d8fa3,rug,red,alfombra,tappeto,couverture
+d2d959c5-49b7-420f-8404-abdbf6c9e376,nightstand,light_grey,mesa de noche,comodino,table de nuit
+0257e29e-1412-438a-9a0a-bb5184dced66,bookshelf,yellow,estante,scaffale,"bibliotheque,bibliothèque"
+b94d8c56-c7d9-4d63-bd58-b78e9664b86e,desk,light_blue,escritorio,scrivania,bureau
+0955601c-b001-4fbe-80ab-afa7e62d0250,computer,blue,computadora,computer,ordinateur
+7d353206-3bc6-4739-92b5-54b9268d14d5,painting,white,pintura,pittura,peinture

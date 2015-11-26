@@ -1,6 +1,6 @@
-UUID,Word,Color,Spanish
-14214ceb-42fb-4bc4-947a-f32a75d813ab,umbrella,yellow,paraguas
-bcf63188-e399-4b20-832e-d9c65523a0a2,surfboard,light_purple,tabla de surf
-04cd5ebc-0181-4a2e-b8e4-505eb2847540,deck chair,blue,tumbona
-7c65abcc-ba64-4786-8497-567725346dd1,beach ball,red,pelota de playa
-369ca365-a38b-479a-b6a4-895e4377fd28,sandcastle,green,castillo de arena
+UUID,Word,Color,Spanish,Italian,French
+14214ceb-42fb-4bc4-947a-f32a75d813ab,umbrella,yellow,paraguas,ombrello,parapluie
+bcf63188-e399-4b20-832e-d9c65523a0a2,surfboard,light_purple,tabla de surf,tavola de surf,planche de surf
+04cd5ebc-0181-4a2e-b8e4-505eb2847540,deck chair,blue,tumbona,sdraio,chaise longue
+7c65abcc-ba64-4786-8497-567725346dd1,beach ball,red,pelota de playa,pallone da spiaggia,balle de plage
+369ca365-a38b-479a-b6a4-895e4377fd28,sandcastle,green,castillo de arena,castello di sabbia,chateau de sable

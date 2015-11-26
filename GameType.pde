@@ -58,7 +58,6 @@ class NewGame extends AbstractScene {
     PImage enterNameBackground;
     List<String> languages;
     Map<String, PImage> languageRenders;
-    List<String> workingLanguages;
     int langPointer;
     String currentLang;
     String userInput;
@@ -84,8 +83,6 @@ class NewGame extends AbstractScene {
             
             // TODO: DON'T HARDCODE THESE
             languages = new ArrayList<String>(3);
-            workingLanguages = new ArrayList<String>(1);
-            workingLanguages.add("spanish");
             languages.add("spanish");
             languages.add("italian");
             languages.add("french");
@@ -110,7 +107,7 @@ class NewGame extends AbstractScene {
     }
     
     void render() {
-        boolean hasLang = workingLanguages.contains(currentLang);
+        boolean hasLang = languages.contains(currentLang);
         boolean hasInput = userInput.trim().length() > 0;
         if (!hasLang || !hasInput) {
             if (isPlayable) {
@@ -163,8 +160,7 @@ class NewGame extends AbstractScene {
     void clickEvent(float x, float y) {
         Color clickColor = getClickColor(x, y);
         if (clickColor.equals(NEW_GAME_COLOR)) {
-           println("NEW GAME WOO");
-           userInput = userInput.trim();
+           getGame().setGameData(new GameData(userInput.trim(), Language.valueOf(currentLang.toUpperCase())));
            new SwitchScene(GAME_ID).execute(this);
         } else {
             for (Color c : eventMap.keySet()) {

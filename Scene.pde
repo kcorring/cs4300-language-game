@@ -18,32 +18,23 @@ class AbstractScene extends Window {
     }
     
     void surrenderControl() {
-      println(this + " surrendered");
+      //println(this + " surrendered");
     }
     
     void takeControl() {
         loadForInteraction();
         currentScene = this;
-        println(this + " took control");
+        //println(this + " took control");
     }
 }
 
 class Scene extends AbstractScene {
-    Map<Color, FlashcardData> flashcardDataMap;
-    
     Scene(String name, String imgFolder, String imgFilename, Extension imgExt) {
         super(name, imgFolder, imgFilename, imgExt);
         loadForInteraction();
-        flashcardDataMap = new HashMap<Color, FlashcardData>();
     }
     
-    void addFlashcardData(Color c, FlashcardData flashcardData) {
-        flashcardDataMap.put(c, flashcardData); 
+    int getRoomID() {
+        return int(name.substring(name.length() - 1, name.length())); 
     }
-    
-    Map<Color, FlashcardData> getFlashcardDataMap() {
-        return flashcardDataMap; 
-    }
-    
-    
 }

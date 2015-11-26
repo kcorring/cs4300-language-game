@@ -74,3 +74,7 @@ void mouseClicked() {
 void keyPressed() {
     currentScene.keyEvent(key, keyCode);
 }
+
+Game getGame() {
+    return (Game) scenes.get(GAME_ID); 
+}

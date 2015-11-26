@@ -73,7 +73,7 @@ class Color {
 }
 
 enum Language {
-    SPANISH; 
+    SPANISH, ITALIAN, FRENCH; 
 }
 
 enum Extension {

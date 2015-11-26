@@ -86,7 +86,7 @@ abstract class Window implements Interactive {
     
     Color getClickColor(float x, float y) {
         Color tmp = new Color(colorMap.pixels[int(x) + int(y) * w]);
-        println(String.format("%s:\t%s", this, tmp));
+        //println(String.format("%s:\t%s", this, tmp));
         return tmp;
     }
     

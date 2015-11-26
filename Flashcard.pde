@@ -39,19 +39,15 @@ class Flashcard extends AbstractFrame {
        this.data = data; 
        userInput = "";
         
-       float stringLength = max(textWidth(data.word), data.longestTranslation);
+       float stringLength = max(textWidth(data.word), data.longestTranslation(language));
        if (stringLength > rW - 50 && !isWide) {
            changeFlashcardSize(wideBackground, wideColorMap, wW, wH, wideOffset, true);
        } else if (stringLength <= rW - 50 && isWide) {
            changeFlashcardSize(regBackground, regColorMap, rW, rH, regOffset, false);
        }
-       answer = false;
+       answer = getGame().gameData.scores.get(data.uuid).correct;
    }
    
-   boolean safeToClose() {
-       return answer && answerAnimation == null;
-   }
-    
    void render() {
        textFont(wordFont, 80);
        fill(0);
@@ -61,15 +57,18 @@ class Flashcard extends AbstractFrame {
        text(data.word, width / 2, height / 2 + WORD_OFFSET);
        if (answerAnimation != null) {
            if (answerAnimation.isDone()) {
+               isHandlingAnswer = false;
                answerAnimation = null;
                if (answer) {
-                   closeWindow();
-               } else {
-                   text(userInput, width / 2, height / 2 + INPUT_OFFSET);
+                   fill(0, 255, 0);
                }
+               text(userInput, width / 2, height / 2 + INPUT_OFFSET);
            } else {
                answerAnimation.render();
            }
+       } else if (answer) {
+           fill(0, 255, 0);
+           text(data.translations.get(language).get(0), width / 2, height / 2 + INPUT_OFFSET);
        } else {
            text(userInput, width / 2, height / 2 + INPUT_OFFSET);
        }
@@ -86,13 +85,11 @@ class Flashcard extends AbstractFrame {
    }
     
    void keyEvent(char k, int kCode) {
-       if (k != CODED && !isHandlingAnswer) {
+       if (k != CODED && !isHandlingAnswer && !answer) {
            if (k == ENTER || k == RETURN) {
                answer = data.checkAnswer(userInput,language);
-               if (answer) {
-                   updateScore(); 
-               }
                answerAnimation = new AnswerAnimation(userInput, answer, 80);
+               isHandlingAnswer = true;
            } else if (k == BACKSPACE || k == DELETE) {
                int len = userInput.length();
                if (len > 0) {
@@ -115,9 +112,5 @@ class Flashcard extends AbstractFrame {
        if (answerAnimation == null) {
            super.clickEvent(x, y);
        }
-   }
-    
-   void updateScore() {
-      
    }
 }
