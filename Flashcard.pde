@@ -46,6 +46,8 @@ class Flashcard extends AbstractFrame {
            changeFlashcardSize(regBackground, regColorMap, rW, rH, regOffset, false);
        }
        answer = getGame().gameData.scores.get(data.uuid).correct;
+       answerAnimation = null;
+       isHandlingAnswer = false;
    }
    
    void render() {
@@ -105,12 +107,6 @@ class Flashcard extends AbstractFrame {
                    userInput += k;
                }
            }
-       }
-   }
-    
-   void clickEvent(float x, float y) {
-       if (answerAnimation == null) {
-           super.clickEvent(x, y);
        }
    }
 }

@@ -39,9 +39,6 @@ void setup() {
     
     scenes = new HashMap<Integer, AbstractScene>();
     
-    Event switchGameType = new SwitchScene(GAME_TYPE_ID);
-    Event switchGame = new SwitchScene(GAME_ID);
-    
     AbstractScene mainMenu = new MainMenu();
     AbstractScene credits = new Credits();
     AbstractScene scores = new Scores();

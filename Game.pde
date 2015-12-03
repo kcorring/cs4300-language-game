@@ -50,6 +50,12 @@ class Game extends AbstractScene {
     void setGameData(GameData gameData) {
         this.gameData = gameData;
         flashcard = new Flashcard(gameData.language);
+        activeRoom = 0;
+        try {
+            activeFlashcardDataMap = gameData.getFlashcardDataMap(rooms.get(activeRoom).getRoomID());    
+        } catch (Exception e) {
+          
+        }
     }
     
     void clickEvent(float x, float y) {

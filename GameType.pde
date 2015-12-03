@@ -160,7 +160,8 @@ class NewGame extends AbstractScene {
     void clickEvent(float x, float y) {
         Color clickColor = getClickColor(x, y);
         if (clickColor.equals(NEW_GAME_COLOR)) {
-           getGame().setGameData(new GameData(userInput.trim(), Language.valueOf(currentLang.toUpperCase())));
+           Game game = getGame();
+           game.setGameData(new GameData(userInput.trim(), Language.valueOf(currentLang.toUpperCase())));
            new SwitchScene(GAME_ID).execute(this);
         } else {
             for (Color c : eventMap.keySet()) {
